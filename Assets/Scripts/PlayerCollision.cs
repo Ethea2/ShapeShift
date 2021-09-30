@@ -47,6 +47,7 @@ public class PlayerCollision : MonoBehaviour
     {
         Scores.playerScore += 1;
         scoreText.text = "Score: " + Scores.playerScore;
+        GetComponent<AudioSource>().Play();
         NewObject();
     }
 
