@@ -20,17 +20,10 @@ public class PlayerCollision : MonoBehaviour
         otherObjectsLength = otherObjects.Length; //gets the current otherObjects length
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void NewObject()
     {
         int randomNumber = Random.Range(0, otherObjectsLength);
-        Debug.Log(randomNumber);
+        //Debug.Log(randomNumber);
         for(int i = 0; i < otherObjects.Length; i++)
         {
             if(i == randomNumber)
@@ -43,7 +36,7 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    public void CollisionDetected(SpriteCollision childScript) 
+    public void CollisionDetected(SpriteCollision childScript) //triggers when a child has collided
     {
         Scores.playerScore += 1;
         scoreText.text = "Score: " + Scores.playerScore;

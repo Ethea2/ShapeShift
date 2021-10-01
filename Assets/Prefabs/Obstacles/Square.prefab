@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yPush: 4
+  startRandomYSpawn: 50
 --- !u!61 &1481481417789759629
 BoxCollider2D:
   m_ObjectHideFlags: 0

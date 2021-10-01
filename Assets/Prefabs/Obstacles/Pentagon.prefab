@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yPush: 4
+  startRandomYSpawn: 50
 --- !u!60 &5565106546438091355
 PolygonCollider2D:
   m_ObjectHideFlags: 0

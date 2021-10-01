@@ -14,15 +14,15 @@ public class SpriteCollision : MonoBehaviour
     {
         Sprite obstacleSprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite; //gets the obstacle's sprite
         Sprite currentSprite = GetComponent<SpriteRenderer>().sprite; //gets the sprite name of this sprite
-        Debug.Log(currentSprite);
-        Debug.Log(obstacleSprite);
+        //Debug.Log(currentSprite);
+        //Debug.Log(obstacleSprite);
         if(currentSprite == obstacleSprite) //checks if the current obstacle sprite is the same with the current sprite.
         {
             /*
             Scores.playerScore += 1;
             scoreText.text = "Score: " + Scores.playerScore;
             */
-            transform.parent.GetComponent<PlayerCollision>().CollisionDetected(this);
+            transform.parent.GetComponent<PlayerCollision>().CollisionDetected(this); //tells the parent object that a collision has happened
         }
         else
         {
