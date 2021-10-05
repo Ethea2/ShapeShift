@@ -5,9 +5,19 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     AudioSource music;
+    public static MusicPlayer _instance;
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if(_instance == null) //prevents music duplicates
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            if(this != _instance)
+                Destroy(this.gameObject);
+        }
         music = GetComponent<AudioSource>();
     }
 

@@ -9,6 +9,8 @@ public class DisplayEndScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Scores highScore = new Scores(); 
         scoreText.text = "Your Score Was: \n" + Scores.playerScore;
+        highScore.SetHighScore(); //saves the new high score
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleMovement : MonoBehaviour
 {
     [SerializeField] float yPush = 4f;
-    [SerializeField] int startRandomYSpawn = 50;
+    [SerializeField] public static bool randomYSpawn = false;
     Vector2 screenBounds;
     int score;
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class ObstacleMovement : MonoBehaviour
 
     void Start()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z)); //sets the bounds of the screen
         //Debug.Log(screenBounds);
     }
 
@@ -25,7 +25,7 @@ public class ObstacleMovement : MonoBehaviour
     void Update()
     {
         Move();
-        if(transform.position.y >= screenBounds.y * 1.5)
+        if(transform.position.y >= screenBounds.y * 1.5) // if it goes beyond the screenbounds the whole gameobject gets eleted
         {
             Destroy(this.gameObject);
         }
@@ -33,17 +33,15 @@ public class ObstacleMovement : MonoBehaviour
 
     public void Move()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, yPush);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, yPush); //sets the speed of the obstacles
     }
 
     public void RandomYPos()
     {
-        int randomNumber = Random.Range(-2, -7);
-        float randomNumberF = (int)randomNumber;
-        //Debug.Log(randomNumberF);
-        //Debug.Log(score);
-        if(score >= startRandomYSpawn)
+        if(randomYSpawn) //creates a beautiful mess (makes the game harder)
         {
+            int randomNumber = Random.Range(-2, -7); //generates a random y position for the object to spawn in.
+            float randomNumberF = (int)randomNumber;
             Vector2 playerPos = transform.position;
             this.transform.position = playerPos + new Vector2(0, randomNumber);
         }

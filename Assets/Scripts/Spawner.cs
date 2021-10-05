@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
     bool score20 = false;
     bool score30 = false;
     bool score50 = false;
+    bool score100 = false;
+    bool score200 = false;
+    bool score300 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,25 +29,67 @@ public class Spawner : MonoBehaviour
     private void FasterSpawn()
     {
         score = Scores.playerScore;
-        if(score == 10 && !score10)
+        if(SaveManager.instance.hardMode)
         {
-            respawnTime -= 0.25f;
-            score10 = true;
+            if(score == 10 && !score10)
+            {
+                ObstacleMovement.randomYSpawn = true;
+                respawnTime -= 0.50f;
+                score10 = true;
+            }
+
+            else if(score == 100 && !score100)
+            {
+                respawnTime -= 0.50f;
+                score100 = true;
+            }
         }
-        else if(score == 20 && !score20)
+        else if(SaveManager.instance.mediumMode)
         {
-            respawnTime -= 0.25f;
-            score20 = true;
+            if(score == 10 && !score10)
+            {
+                respawnTime -= 0.25f;
+                score10 = true;
+            }
+            else if(score == 20 && !score20)
+            {
+                respawnTime -= 0.25f;
+                score20 = true;
+            }
+            else if(score == 30 && !score30)
+            {
+                respawnTime -= 0.25f;
+                score30 = true;
+            }
+            else if(score == 50 && !score50)
+            {
+                ObstacleMovement.randomYSpawn = true;
+                respawnTime = 1.5f;
+                score50 = false;
+            }
         }
-        else if(score == 30 && !score30)
+        else if(SaveManager.instance.easyMode)
         {
-            respawnTime -= 0.25f;
-            score30 = true;
-        }
-        else if(score == 50 && !score50)
-        {
-            respawnTime = 1.5f;
-            score50 = false;
+            if(score == 50 && !score50)
+            {
+                respawnTime -= 0.25f;
+                score50 = true;
+            }
+            else if(score == 100 && !score100)
+            {
+                respawnTime -= 0.25f;
+                score100 = true;
+            }
+            else if(score == 200 && !score200)
+            {
+                respawnTime -= 0.25f;
+                score200 = true;
+            }
+            else if(score == 300 && !score300)
+            {
+                respawnTime = 1.5f;
+                score300 = true;
+            }
         }
     }
 

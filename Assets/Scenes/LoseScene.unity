@@ -466,8 +466,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 788413034}
-  - component: {fileID: 788413033}
   - component: {fileID: 788413035}
+  - component: {fileID: 788413033}
   m_Layer: 0
   m_Name: StartGame
   m_TagString: Untagged
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 788413032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80c291762109117418601daff9976767, type: 3}
+  m_Script: {fileID: 11500000, guid: 57d864e21e18182468739da798e5d607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &788413034
@@ -989,7 +989,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 788413033}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadMainScene
         m_Mode: 1
         m_Arguments:
@@ -1001,7 +1001,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 788413033}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: PlayAudio
         m_Mode: 1
         m_Arguments:

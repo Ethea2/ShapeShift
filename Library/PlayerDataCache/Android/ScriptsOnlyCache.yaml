@@ -2,15 +2,19 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ChildlessDestroy
+    - DifficultySetting
     - DisplayEndScore
+    - DisplayHighScore
     - MusicPlayer
+    - MusicSettings
     - ObstacleCollision
     - ObstacleMovement
     - PlayerCollision
     - PlayerMovement
+    - SaveManager
+    - SceneLoader
     - Spawner
     - SpriteCollision
-    - StartGame
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -101,8 +105,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3166}
     - Class: 114
-      Script: {instanceID: 3256}
-    - Class: 114
       Script: {instanceID: 3422}
     - Class: 114
       Script: {instanceID: 3556}
@@ -116,6 +118,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5726}
     - Class: 114
       Script: {instanceID: 5938}
+    - Class: 114
+      Script: {instanceID: 22816}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -259,8 +263,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3166}
     - Class: 114
-      Script: {instanceID: 3256}
-    - Class: 114
       Script: {instanceID: 3422}
     - Class: 114
       Script: {instanceID: 3556}
@@ -280,6 +282,85 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5726}
     - Class: 114
       Script: {instanceID: 5938}
+    - Class: 114
+      Script: {instanceID: 22816}
+    - Class: 114
+      Script: {instanceID: 31724}
+    - Class: 114
+      Script: {instanceID: 31726}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/SettingsScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 72
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1534}
+    - Class: 114
+      Script: {instanceID: 1922}
+    - Class: 114
+      Script: {instanceID: 2612}
+    - Class: 114
+      Script: {instanceID: 2776}
+    - Class: 114
+      Script: {instanceID: 2944}
+    - Class: 114
+      Script: {instanceID: 2990}
+    - Class: 114
+      Script: {instanceID: 3166}
+    - Class: 114
+      Script: {instanceID: 3256}
+    - Class: 114
+      Script: {instanceID: 3422}
+    - Class: 114
+      Script: {instanceID: 3556}
+    - Class: 114
+      Script: {instanceID: 4136}
+    - Class: 114
+      Script: {instanceID: 4770}
+    - Class: 114
+      Script: {instanceID: 5726}
+    - Class: 114
+      Script: {instanceID: 5938}
+    - Class: 114
+      Script: {instanceID: 17982}
+    - Class: 114
+      Script: {instanceID: 22816}
+    - Class: 114
+      Script: {instanceID: 38504}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -600,12 +681,6 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: StartGame
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
@@ -713,7 +788,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 56eab2b2d1261b332e948f7926ccddb8
+      Hash: 72e4809bb14d3a8e54d71a625ca6db8c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObstacleMovement
@@ -1179,9 +1254,40 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: AmbientOcclusion
+  - hash:
+      serializedVersion: 2
+      Hash: ca5483eeb95f986bee71528ff65a726a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DifficultySetting
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneLoader
+  - hash:
+      serializedVersion: 2
+      Hash: b130029e8d807e24ad1ccc209b0c6f2d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SaveManager
+  - hash:
+      serializedVersion: 2
+      Hash: bbbdcda245b3c56f1239cffc728f8bf5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DisplayHighScore
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MusicSettings
   platform: 13
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/LoseScene.unity
+  - Assets/Scenes/SettingsScene.unity
   playerPath: C:/Repos/Unity2d/Shape Shape/ShapeTest.apk
